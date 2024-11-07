@@ -230,6 +230,7 @@
   justify-content: space-between;
   height: 100%;
   background-color: white;
+  transition: all 0.2s;
 }
 
 #secondary-menu ul {
@@ -969,13 +970,13 @@
 #manual-page .manual-scroll-section {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  /* width: 100%; */
   overflow: auto;
   margin: 0px;
 }
 
 .manual-scroll-section .manual-book {
-  /* width: 250px; */
+  width: 150px;
   /* width: fit-content; */
   border: 2px solid gray;
   border-radius: 5px;
@@ -987,6 +988,7 @@
 .manual-scroll-section .manual-book img {
   height: 200px;
   width: 150px;
+  /* width: 100%; */
 }
 
 .manual-scroll-section .manual-book #manual-info {
@@ -1117,7 +1119,7 @@
 /* TEST PAPER PAGE --------------------------------------------------------- */
 
 #test-page {
-  width: 100vw;
+  /* width: 100vw; */
 
   background-color: white;
   display: none;
@@ -1532,7 +1534,7 @@
     background-color: white;
     /* right: 1px; */
     position: fixed;
-    right: -259px;
+    right: -260px;
     top: 0px;
     box-shadow: 7px 12px 23px rgb(156, 155, 155);
   }

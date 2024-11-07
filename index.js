@@ -1,5 +1,9 @@
 let banner_container = document.getElementById("slides_container");
 
+// box.addEventListener("click", () => {
+//   window.location.href = item.file;
+// });
+
 var counter = 0;
 
 function scroll_forward() {
@@ -73,6 +77,11 @@ let book_page = document.getElementById("book-page");
 // let aout_page = document.getElementById("");
 // let contact_page = document.getElementById("");
 
+// CONTAINERS -----
+
+let tests_container = document.getElementById("test-question-section");
+let unsolvemanualcont = document.getElementById("unsolved-manual-section");
+let solvemanualcont = document.getElementById("solved-manual-section");
 let pages_array = [
   subject_page,
   classwork_page,
@@ -85,6 +94,7 @@ let pages_array = [
   form_page,
   timetable_page,
   book_page,
+  test_page,
 ];
 
 // ALL BUTTONS --------------------------
@@ -99,7 +109,13 @@ let video_page_btn = document.getElementById("video-btn");
 let form_page_btn = document.getElementById("form-btn");
 // H BTN
 let h_classwork_btn = document.getElementById("h_classwork_btn");
-let h = document.getElementById("h_classwork_btn");
+let h_timetable_btn = document.getElementById("h_timetable_btn");
+let h_test_btn = document.getElementById("h_test_btn");
+let h_book_btn = document.getElementById("h_book_btn");
+let h_manual_btn = document.getElementById("h_manual_btn");
+let h_gallery_btn = document.getElementById("h_gallery_btn");
+let about_btn = document.getElementById("about-btn");
+let contact_btn = document.getElementById("contact-btn");
 
 // ALL BTNS ARRAY
 let hor_btn = [
@@ -112,6 +128,23 @@ let hor_btn = [
   video_page_btn,
   form_page_btn,
 ];
+
+// MENU CODE ----
+
+main_menu_btn.addEventListener("click", () => {
+  if (main_menu.style.right == "0px") {
+    main_menu.style.right = "-260px";
+  } else {
+    main_menu.style.right = "0px";
+    menu_blankspace.style.display = "block";
+  }
+});
+
+menu_blankspace.addEventListener("click", () => {
+  main_menu.style.right = "-260px";
+  menu_blankspace.style.display = "none";
+});
+// END OF MENU CODE ---
 
 // ALL BUTTON FUNCTIONS--------------
 
@@ -128,6 +161,110 @@ h_classwork_btn.addEventListener("click", (e) => {
 
     classwork_page_btn.style.color = "#2064b1";
     classwork_page_btn.style.borderBottom = "2px solid #2064b1";
+  }
+
+  if (menu_blankspace.style.display == "block") {
+    main_menu.style.right = "-260px";
+    menu_blankspace.style.display = "none";
+  }
+});
+
+h_manual_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  for (i = 0; i < pages_array.length; i++) {
+    pages_array[i].style.display = "none";
+    manual_page.style.display = "block";
+  }
+  for (i = 0; i < hor_btn.length; i++) {
+    hor_btn[i].style.color = "black";
+    hor_btn[i].style.borderBottom = "2px solid #ffff";
+
+    manual_page_btn.style.color = "#2064b1";
+    manual_page_btn.style.borderBottom = "2px solid #2064b1";
+  }
+
+  if (menu_blankspace.style.display == "block") {
+    main_menu.style.right = "-260px";
+    menu_blankspace.style.display = "none";
+  }
+});
+
+h_gallery_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  for (i = 0; i < pages_array.length; i++) {
+    pages_array[i].style.display = "none";
+    gallery_page.style.display = "block";
+  }
+  for (i = 0; i < hor_btn.length; i++) {
+    hor_btn[i].style.color = "black";
+    hor_btn[i].style.borderBottom = "2px solid #ffff";
+
+    gallery_page_btn.style.color = "#2064b1";
+    gallery_page_btn.style.borderBottom = "2px solid #2064b1";
+  }
+
+  if (menu_blankspace.style.display == "block") {
+    main_menu.style.right = "-260px";
+    menu_blankspace.style.display = "none";
+  }
+});
+
+h_test_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  for (i = 0; i < pages_array.length; i++) {
+    pages_array[i].style.display = "none";
+    test_page.style.display = "block";
+  }
+
+  for (i = 0; i < hor_btn.length; i++) {
+    hor_btn[i].style.color = "black";
+    hor_btn[i].style.borderBottom = "2px solid #ffff";
+  }
+
+  if (menu_blankspace.style.display == "block") {
+    main_menu.style.right = "-260px";
+    menu_blankspace.style.display = "none";
+  }
+});
+
+h_book_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  for (i = 0; i < pages_array.length; i++) {
+    pages_array[i].style.display = "none";
+    book_page.style.display = "block";
+  }
+
+  for (i = 0; i < hor_btn.length; i++) {
+    hor_btn[i].style.color = "black";
+    hor_btn[i].style.borderBottom = "2px solid #ffff";
+  }
+
+  if (menu_blankspace.style.display == "block") {
+    main_menu.style.right = "-260px";
+    menu_blankspace.style.display = "none";
+  }
+});
+
+h_timetable_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  for (i = 0; i < pages_array.length; i++) {
+    pages_array[i].style.display = "none";
+    timetable_page.style.display = "block";
+  }
+
+  for (i = 0; i < hor_btn.length; i++) {
+    hor_btn[i].style.color = "black";
+    hor_btn[i].style.borderBottom = "2px solid #ffff";
+  }
+
+  if (menu_blankspace.style.display == "block") {
+    main_menu.style.right = "-260px";
+    menu_blankspace.style.display = "none";
   }
 });
 
@@ -258,12 +395,6 @@ form_page_btn.addEventListener("click", (e) => {
 
 // END OF ALL BUTTONG FUNC
 
-// MENU CODE ----
-
-// main_menu_btn.addEventListener("click", () => {
-// main_menu.style.right = "0px";
-// });
-// END OF MENU CODE ---
 // SUBJECT ARRAY
 let subject_array = [
   {
@@ -526,8 +657,8 @@ let subject_array = [
     thumnail_img: "python.png",
     code: "D2CO",
     syllabus: [
-      { title: "Maths (basic)", s_pdf: "asf.pdf" },
-      { title: "Maths (applied)", s_pdf: "asf.pdf" },
+      { title: "Maths (adfadfafa)", s_pdf: "asf.pdf" },
+      { title: "hiff (applied)", s_pdf: "asf.pdf" },
     ],
   },
   {
@@ -773,7 +904,175 @@ let important_note = [
     soln_pdf: "some.pdf",
   },
 ];
+// TEST ARRAY ---
+let tests_array = [
+  {
+    title: "Matrices",
+    code: "P3AO",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MAT",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "hINDI",
+    code: "P3AO",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MAT",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "Matrices",
+    code: "P3AO",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MAT",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "MARATHI",
+    code: "P3AO",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MAT",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "MARATHI",
+    code: "P3AO",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MATdd",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "MARATHI",
+    code: "P3CO",
+    date: "5/10/24",
+    author: "someone else",
+    subject: "MddT",
+    ques_pdf: "test.pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "MARATHI",
+    code: "M1",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MAT",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+  {
+    title: "MARATHI",
+    code: "P3AO",
+    date: "5/10/24",
+    author: "Sandeep Wagh",
+    subject: "MAT",
+    ques_pdf: "plotterpdf (1).pdf",
+    sol_pdf: "hey.pdf",
+  },
+];
 
+// MANUAL BOOKS
+
+let unsolved_manual_books = [
+  {
+    subject: "mathss",
+    title: "Rd sharma books",
+    code: "D1",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+
+  {
+    subject: "mathss",
+    title: "Rd sharma books",
+    code: "D1",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "mathss",
+    title: "Rd sharma books",
+    code: "D2CO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "sddsd",
+    title: "Rd sharma books",
+    code: "D2CO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "sddsd",
+    title: "Rd sharma books",
+    code: "D2CO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "sddsd",
+    title: "Rd sharma books",
+    code: "P2AO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+];
+
+let solved_manual_books = [
+  {
+    subject: "mathss",
+    title: "Rd sharma books",
+    code: "P1",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+
+  {
+    subject: "mathss",
+    title: "Rd sharma books",
+    code: "D1",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "mathss",
+    title: "Rd sharma books",
+    code: "P3AO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "sddsd",
+    title: "Rd sharma books",
+    code: "D2CO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "sddsd",
+    title: "Rd sharma books",
+    code: "D2CO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+  {
+    subject: "sddsd",
+    title: "Rd sharma books",
+    code: "P2AO",
+    manual_pdf: "add.pdf",
+    img: "ald.svg",
+  },
+];
 // END OF VARIABLE FOR YEAR AND BRANCHES
 
 // BACKGROUND IMAGES FOR SUBJECT BOXES
@@ -858,7 +1157,7 @@ function createBoxes(containerId, data, targetCode) {
         syllabus_container.innerHTML = "";
         item.syllabus.forEach((slbs) => {
           let slbs_cont = document.createElement("a");
-          slbs_cont.href = slbs.s_pdf;
+          slbs_cont.href = `syllabus/${slbs.s_pdf}`;
           slbs_cont.innerHTML = slbs.title;
 
           syllabus_container.appendChild(slbs_cont);
@@ -881,7 +1180,7 @@ function createBoxes(containerId, data, targetCode) {
               h3.textContent = pq.title;
 
               const h4 = document.createElement("h4");
-              h4.textContent = pq.chap;
+              h4.textContent = `Chap - ${pq.chap}`;
 
               const p = document.createElement("p");
               p.textContent = pq.status;
@@ -898,8 +1197,8 @@ function createBoxes(containerId, data, targetCode) {
 
               pracBlock.addEventListener("click", (e) => {
                 e.preventDefault();
-                question_a_tag.href = pq.question_pdf;
-                soln_a_tag.href = pq.soln_pdf;
+                question_a_tag.href = `pracnote/${pq.question_pdf}`;
+                soln_a_tag.href = `pracnote/${pq.soln_pdf}`;
                 question_soln_box.style.display = "flex";
                 que_soln_blankspace.style.display = "block";
               });
@@ -929,7 +1228,7 @@ function createBoxes(containerId, data, targetCode) {
               h4.textContent = pq.chap;
 
               const p = document.createElement("p");
-              p.textContent = pq.status;
+              p.textContent = `Chap - ${pq.status}`;
 
               contentDiv.appendChild(h3);
               contentDiv.appendChild(h4);
@@ -943,8 +1242,8 @@ function createBoxes(containerId, data, targetCode) {
 
               pracBlock.addEventListener("click", (e) => {
                 e.preventDefault();
-                question_a_tag.href = pq.question_pdf;
-                soln_a_tag.href = pq.soln_pdf;
+                question_a_tag.href = `impnote/${pq.question_pdf}`;
+                soln_a_tag.href = `impnote/${pq.soln_pdf}`;
                 question_soln_box.style.display = "flex";
                 que_soln_blankspace.style.display = "block";
               });
@@ -994,6 +1293,8 @@ function d_fy_func() {
     subject_page_btn.style.color = "#2064b1";
     subject_page_btn.style.borderBottom = "2px solid #2064b1";
   }
+
+  tests_container.innerHTML = "";
 }
 let P_first_year_btn = document.getElementById("py1");
 function p_fy_func() {
@@ -1053,6 +1354,203 @@ function appending_branch(given_array, year) {
         pages_array[i].style.display = "none";
       }
 
+      // TEST PAGE JAVA CODE ----
+      tests_container.innerHTML = "";
+
+      tests_array.forEach((item) => {
+        if (item.code == final_code) {
+          const box = document.createElement("div");
+          box.className = "classwork";
+
+          const title = document.createElement("h3");
+          title.textContent = item.title;
+
+          const line = document.createElement("hr");
+
+          const date = document.createElement("p");
+          date.textContent = item.date;
+
+          const author = document.createElement("p");
+          author.textContent = item.author;
+
+          const subject = document.createElement("p");
+          subject.id = "sub-head";
+          subject.textContent = item.subject;
+
+          box.appendChild(title);
+          box.appendChild(line);
+          box.appendChild(date);
+          box.appendChild(author);
+          box.appendChild(subject);
+
+          // box on click code
+
+          box.addEventListener("click", () => {
+            // question_a_tag.href = `tests/${item.ques_pdf}`;
+            question_a_tag.href = `tests/${item.ques_pdf}`;
+            soln_a_tag.href = `tests/${item.sol_pdf}`;
+            question_soln_box.style.display = "flex";
+            que_soln_blankspace.style.display = "block";
+          });
+
+          tests_container.appendChild(box);
+        }
+      });
+
+      // MANUAL BOOK CODE
+
+      solvemanualcont.innerHTML = "";
+      unsolvemanualcont.innerHTML = "";
+
+      unsolved_manual_books.forEach((element) => {
+        let final_year = "";
+
+        switch (element.code) {
+          case "D1":
+            final_year = "first year";
+            break;
+          case "P1":
+            final_year = "first year";
+            break;
+
+          case "D2CO":
+            final_year = "CO year 2";
+            break;
+          case "D3CO":
+            final_year = "CO year 3";
+            break;
+          case "D4CO":
+            final_year = "CO year 4";
+            break;
+
+          case "D2ME":
+            final_year = "ME year 2";
+            break;
+          case "D3ME":
+            final_year = "ME year 3";
+            break;
+          case "D4ME":
+            final_year = "ME year 4";
+            break;
+
+          case "D2AN":
+            final_year = "AN year 2";
+            break;
+          case "D3AN":
+            final_year = "AN year 3";
+            break;
+          case "D4AN":
+            final_year = "AN year 4";
+            break;
+
+          case "D2MK":
+            final_year = "MK year 2";
+            break;
+          case "D3MK":
+            final_year = "MK year 3";
+            break;
+          case "D4MK":
+            final_year = "MK year 4";
+            break;
+
+          case "D2AO":
+            final_year = "AO year 2";
+            break;
+          case "D3AO":
+            final_year = "AO year 3";
+            break;
+          case "D4AO":
+            final_year = "AO year 4";
+            break;
+
+          case "D2CE":
+            final_year = "CE year 2";
+            break;
+          case "D3CE":
+            final_year = "CE year 3";
+            break;
+          case "D4CE":
+            final_year = "CE year 4";
+            break;
+
+          case "D2EE":
+            final_year = "EE year 2";
+            break;
+          case "D3EE":
+            final_year = "EE year 3";
+            break;
+          case "D4EE":
+            final_year = "EE year 4";
+            break;
+
+          case "P2CO":
+            final_year = "CO year 2";
+            break;
+          case "P3CO":
+            final_year = "CO year 3";
+            break;
+
+          case "P2AN":
+            final_year = "AN year 2";
+            break;
+          case "P3AN":
+            final_year = "AN year 3";
+            break;
+
+          case "P2EE":
+            final_year = "EE year 2";
+            break;
+          case "P3EE":
+            final_year = "EE year 3";
+            break;
+
+          case "P2CE":
+            final_year = "CE year 2";
+            break;
+          case "P3CE":
+            final_year = "CE year 3";
+            break;
+
+          case "P2CE":
+            final_year = "CE year 2";
+            break;
+          case "P3CE":
+            final_year = "CE year 3";
+            break;
+
+          case "P2ME":
+            final_year = "ME year 2";
+            break;
+          case "P3ME":
+            final_year = "ME year 3";
+            break;
+
+          default:
+            final_year = "NOT DEFIEND";
+
+            break;
+        }
+
+        let cont = document.createElement("div");
+        cont.setAttribute("class", "manual-book");
+
+        cont.innerHTML = `
+         
+                            <img src="unsolvemanual/${element.img}" alt="loading">
+                            <div id="manual-info">
+                                <h3>
+                                    ${element.title}
+                                </h3>
+
+                                <p style="color: #0b57d0; font-weight: 100; margin: 10px 0;">${element.subject}</p>
+                                <p>${final_year}</p>
+                                <p>Unsolved</p>
+
+                            </div>
+         `;
+
+        unsolvemanualcont.append(cont);
+      });
       subject_box_cont.innerHTML = "";
       createBoxes(subject_box_cont, subject_array, final_code);
       branch_select_container.style.display = "none";
