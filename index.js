@@ -24,6 +24,15 @@ setInterval(scroll_forward, 2000);
 // const branch_var = "";
 // const final_code = year_var + branch_var;
 
+let data_store = document.getElementById("data-store");
+
+window.onload = function () {
+  // const username = localStorage.getItem("username");
+  // if (username) {
+  data_store.innerHTML = `Welcome back, ${username}!`;
+  // }
+};
+
 // MAIN CONTAINER
 let main_container = document.getElementById("main-container");
 let change_branch_btn = document.getElementById("change-branch");
@@ -813,7 +822,7 @@ let practice_question = [
     title: "asfas",
     chap: "7",
     status: "test paper",
-    code: "D1CO",
+    code: "D1",
     question_pdf: "some.pdf",
     soln_pdf: "some.pdf",
   },
@@ -823,11 +832,11 @@ let practice_question = [
 
 let important_note = [
   {
-    name: "Maths",
+    name: "WPC",
     title: "Maths (matrices)",
     chap: "7",
     status: "test paper",
-    code: "D1CO",
+    code: "P1",
     question_pdf: "some.pdf",
     soln_pdf: "some.pdf",
   },
@@ -907,8 +916,8 @@ let important_note = [
 // TEST ARRAY ---
 let tests_array = [
   {
-    title: "Matrices",
-    code: "P3AO",
+    title: "MatricesP1",
+    code: "P1",
     date: "5/10/24",
     author: "Sandeep Wagh",
     subject: "MAT",
@@ -1001,7 +1010,7 @@ let unsolved_manual_books = [
   {
     subject: "mathss",
     title: "Rd sharma books",
-    code: "D2CO",
+    code: "P1",
     manual_pdf: "add.pdf",
     img: "ald.svg",
   },
@@ -1024,7 +1033,7 @@ let unsolved_manual_books = [
     title: "Rd sharma books",
     code: "P2AO",
     manual_pdf: "add.pdf",
-    img: "ald.svg",
+    img: "book.webp",
   },
 ];
 
@@ -1269,6 +1278,223 @@ login_back_btn.addEventListener("click", () => {
 });
 // END OF BACK BTN CODE
 
+// MAIN FUNCTION
+
+function main_function(final_code) {
+  localStorage.setItem("username", final_code);
+  data_store.innerHTML = final_code;
+
+  console.log(final_code);
+
+  // main code will be written here -----
+
+  for (i = 0; i < pages_array.length; i++) {
+    pages_array[i].style.display = "none";
+  }
+
+  // TEST PAGE JAVA CODE ----
+  tests_container.innerHTML = "";
+
+  tests_array.forEach((item) => {
+    if (item.code == final_code) {
+      const box = document.createElement("div");
+      box.className = "classwork";
+
+      const title = document.createElement("h3");
+      title.textContent = item.title;
+
+      const line = document.createElement("hr");
+
+      const date = document.createElement("p");
+      date.textContent = item.date;
+
+      const author = document.createElement("p");
+      author.textContent = item.author;
+
+      const subject = document.createElement("p");
+      subject.id = "sub-head";
+      subject.textContent = item.subject;
+
+      box.appendChild(title);
+      box.appendChild(line);
+      box.appendChild(date);
+      box.appendChild(author);
+      box.appendChild(subject);
+
+      // box on click code
+
+      box.addEventListener("click", () => {
+        // question_a_tag.href = `tests/${item.ques_pdf}`;
+        question_a_tag.href = `tests/${item.ques_pdf}`;
+        soln_a_tag.href = `tests/${item.sol_pdf}`;
+        question_soln_box.style.display = "flex";
+        que_soln_blankspace.style.display = "block";
+      });
+
+      tests_container.appendChild(box);
+    }
+  });
+
+  // MANUAL BOOK CODE
+
+  solvemanualcont.innerHTML = "";
+  unsolvemanualcont.innerHTML = "";
+
+  unsolved_manual_books.forEach((element) => {
+    let final_year = "";
+
+    switch (element.code) {
+      case "D1":
+        final_year = "first year";
+        break;
+      case "P1":
+        final_year = "first year";
+        break;
+
+      case "D2CO":
+        final_year = "CO year 2";
+        break;
+      case "D3CO":
+        final_year = "CO year 3";
+        break;
+      case "D4CO":
+        final_year = "CO year 4";
+        break;
+
+      case "D2ME":
+        final_year = "ME year 2";
+        break;
+      case "D3ME":
+        final_year = "ME year 3";
+        break;
+      case "D4ME":
+        final_year = "ME year 4";
+        break;
+
+      case "D2AN":
+        final_year = "AN year 2";
+        break;
+      case "D3AN":
+        final_year = "AN year 3";
+        break;
+      case "D4AN":
+        final_year = "AN year 4";
+        break;
+
+      case "D2MK":
+        final_year = "MK year 2";
+        break;
+      case "D3MK":
+        final_year = "MK year 3";
+        break;
+      case "D4MK":
+        final_year = "MK year 4";
+        break;
+
+      case "D2AO":
+        final_year = "AO year 2";
+        break;
+      case "D3AO":
+        final_year = "AO year 3";
+        break;
+      case "D4AO":
+        final_year = "AO year 4";
+        break;
+
+      case "D2CE":
+        final_year = "CE year 2";
+        break;
+      case "D3CE":
+        final_year = "CE year 3";
+        break;
+      case "D4CE":
+        final_year = "CE year 4";
+        break;
+
+      case "D2EE":
+        final_year = "EE year 2";
+        break;
+      case "D3EE":
+        final_year = "EE year 3";
+        break;
+      case "D4EE":
+        final_year = "EE year 4";
+        break;
+
+      case "P2CO":
+        final_year = "CO year 2";
+        break;
+      case "P3CO":
+        final_year = "CO year 3";
+        break;
+
+      case "P2AN":
+        final_year = "AN year 2";
+        break;
+      case "P3AN":
+        final_year = "AN year 3";
+        break;
+
+      case "P2EE":
+        final_year = "EE year 2";
+        break;
+      case "P3EE":
+        final_year = "EE year 3";
+        break;
+
+      case "P2CE":
+        final_year = "CE year 2";
+        break;
+      case "P3CE":
+        final_year = "CE year 3";
+        break;
+
+      case "P2CE":
+        final_year = "CE year 2";
+        break;
+      case "P3CE":
+        final_year = "CE year 3";
+        break;
+
+      case "P2ME":
+        final_year = "ME year 2";
+        break;
+      case "P3ME":
+        final_year = "ME year 3";
+        break;
+
+      default:
+        final_year = "NOT DEFIEND";
+
+        break;
+    }
+
+    let cont = document.createElement("div");
+    cont.setAttribute("class", "manual-book");
+
+    cont.innerHTML = `
+         
+                            <img src="unsolvemanual/${element.img}" alt="loading">
+                            <div id="manual-info">
+                                <h3>
+                                    ${element.title}
+                                </h3>
+
+                                <p style="color: #0b57d0; font-weight: 100; margin: 10px 0;">${element.subject}</p>
+                                <p>${final_year}</p>
+                                <p>Unsolved</p>
+
+                            </div>
+         `;
+
+    cont.addEventListener("click", () => {
+      window.location.href = element.manual_pdf;
+    });
+
+    unsolvemanualcont.append(cont);
+  });
+}
+
 // FIRST YEAR BUTTON CODE FOR DIPLOMA AND DIGREE ------------
 let D_first_year_btn = document.getElementById("dy1");
 
@@ -1276,7 +1502,7 @@ function d_fy_func() {
   let year_var = "D1";
   subject_box_cont.innerHTML = "";
   createBoxes(subject_box_cont, subject_array, year_var);
-
+  main_function(year_var);
   for (i = 0; i < pages_array.length; i++) {
     pages_array[i].style.display = "none";
   }
@@ -1302,6 +1528,8 @@ function p_fy_func() {
   subject_box_cont.innerHTML = "";
   createBoxes(subject_box_cont, subject_array, year_var);
 
+  main_function(year_var);
+
   for (i = 0; i < pages_array.length; i++) {
     pages_array[i].style.display = "none";
   }
@@ -1326,12 +1554,15 @@ let degree_branch_array = [
   { name: "AO", code: "AO" },
   { name: "CE", code: "CE" },
   { name: "CO", code: "CO" },
+  { name: "AN", code: "AN" },
   { name: "ME", code: "ME" },
+  { name: "MK", code: "MK" },
   { name: "EE", code: "EE" },
 ];
 
 let diploma_branch_array = [
   { name: "AO", code: "AO" },
+  { name: "AN", code: "AN" },
   { name: "CE", code: "CE" },
   { name: "CO", code: "CO" },
   { name: "ME", code: "ME" },
@@ -1345,214 +1576,15 @@ function appending_branch(given_array, year) {
 
     branch_box.addEventListener("click", () => {
       let branch_var = item.code;
-      let final_code = year + branch_var;
-      console.log(final_code);
+      let final_codes = year + branch_var;
 
-      // main code will be written here -----
+      main_function(final_codes);
+      // let branch_var = item.code;
+      // let final_code = year + branch_var;
 
-      for (i = 0; i < pages_array.length; i++) {
-        pages_array[i].style.display = "none";
-      }
-
-      // TEST PAGE JAVA CODE ----
-      tests_container.innerHTML = "";
-
-      tests_array.forEach((item) => {
-        if (item.code == final_code) {
-          const box = document.createElement("div");
-          box.className = "classwork";
-
-          const title = document.createElement("h3");
-          title.textContent = item.title;
-
-          const line = document.createElement("hr");
-
-          const date = document.createElement("p");
-          date.textContent = item.date;
-
-          const author = document.createElement("p");
-          author.textContent = item.author;
-
-          const subject = document.createElement("p");
-          subject.id = "sub-head";
-          subject.textContent = item.subject;
-
-          box.appendChild(title);
-          box.appendChild(line);
-          box.appendChild(date);
-          box.appendChild(author);
-          box.appendChild(subject);
-
-          // box on click code
-
-          box.addEventListener("click", () => {
-            // question_a_tag.href = `tests/${item.ques_pdf}`;
-            question_a_tag.href = `tests/${item.ques_pdf}`;
-            soln_a_tag.href = `tests/${item.sol_pdf}`;
-            question_soln_box.style.display = "flex";
-            que_soln_blankspace.style.display = "block";
-          });
-
-          tests_container.appendChild(box);
-        }
-      });
-
-      // MANUAL BOOK CODE
-
-      solvemanualcont.innerHTML = "";
-      unsolvemanualcont.innerHTML = "";
-
-      unsolved_manual_books.forEach((element) => {
-        let final_year = "";
-
-        switch (element.code) {
-          case "D1":
-            final_year = "first year";
-            break;
-          case "P1":
-            final_year = "first year";
-            break;
-
-          case "D2CO":
-            final_year = "CO year 2";
-            break;
-          case "D3CO":
-            final_year = "CO year 3";
-            break;
-          case "D4CO":
-            final_year = "CO year 4";
-            break;
-
-          case "D2ME":
-            final_year = "ME year 2";
-            break;
-          case "D3ME":
-            final_year = "ME year 3";
-            break;
-          case "D4ME":
-            final_year = "ME year 4";
-            break;
-
-          case "D2AN":
-            final_year = "AN year 2";
-            break;
-          case "D3AN":
-            final_year = "AN year 3";
-            break;
-          case "D4AN":
-            final_year = "AN year 4";
-            break;
-
-          case "D2MK":
-            final_year = "MK year 2";
-            break;
-          case "D3MK":
-            final_year = "MK year 3";
-            break;
-          case "D4MK":
-            final_year = "MK year 4";
-            break;
-
-          case "D2AO":
-            final_year = "AO year 2";
-            break;
-          case "D3AO":
-            final_year = "AO year 3";
-            break;
-          case "D4AO":
-            final_year = "AO year 4";
-            break;
-
-          case "D2CE":
-            final_year = "CE year 2";
-            break;
-          case "D3CE":
-            final_year = "CE year 3";
-            break;
-          case "D4CE":
-            final_year = "CE year 4";
-            break;
-
-          case "D2EE":
-            final_year = "EE year 2";
-            break;
-          case "D3EE":
-            final_year = "EE year 3";
-            break;
-          case "D4EE":
-            final_year = "EE year 4";
-            break;
-
-          case "P2CO":
-            final_year = "CO year 2";
-            break;
-          case "P3CO":
-            final_year = "CO year 3";
-            break;
-
-          case "P2AN":
-            final_year = "AN year 2";
-            break;
-          case "P3AN":
-            final_year = "AN year 3";
-            break;
-
-          case "P2EE":
-            final_year = "EE year 2";
-            break;
-          case "P3EE":
-            final_year = "EE year 3";
-            break;
-
-          case "P2CE":
-            final_year = "CE year 2";
-            break;
-          case "P3CE":
-            final_year = "CE year 3";
-            break;
-
-          case "P2CE":
-            final_year = "CE year 2";
-            break;
-          case "P3CE":
-            final_year = "CE year 3";
-            break;
-
-          case "P2ME":
-            final_year = "ME year 2";
-            break;
-          case "P3ME":
-            final_year = "ME year 3";
-            break;
-
-          default:
-            final_year = "NOT DEFIEND";
-
-            break;
-        }
-
-        let cont = document.createElement("div");
-        cont.setAttribute("class", "manual-book");
-
-        cont.innerHTML = `
-         
-                            <img src="unsolvemanual/${element.img}" alt="loading">
-                            <div id="manual-info">
-                                <h3>
-                                    ${element.title}
-                                </h3>
-
-                                <p style="color: #0b57d0; font-weight: 100; margin: 10px 0;">${element.subject}</p>
-                                <p>${final_year}</p>
-                                <p>Unsolved</p>
-
-                            </div>
-         `;
-
-        unsolvemanualcont.append(cont);
-      });
       subject_box_cont.innerHTML = "";
-      createBoxes(subject_box_cont, subject_array, final_code);
+      // createBoxes(subject_box_cont, subject_array, final_code);
+      createBoxes(subject_box_cont, subject_array, final_codes);
       branch_select_container.style.display = "none";
       year_select_container.style.display = "block";
       whole_login_page.style.display = "none";
@@ -1572,8 +1604,11 @@ function appending_branch(given_array, year) {
     branch_container.appendChild(branch_box);
   });
 }
+
 function d_sy_func() {
   let year_var = "D2";
+
+  // main_function(year_var);
 
   branch_container.innerHTML = "";
   appending_branch(degree_branch_array, year_var);
@@ -1585,6 +1620,8 @@ function d_sy_func() {
 
 function d_ty_func() {
   let year_var = "D3";
+
+  // main_function(year_var);
 
   branch_container.innerHTML = "";
   appending_branch(degree_branch_array, year_var);
@@ -1630,3 +1667,20 @@ function p_ty_func() {
 }
 
 // END OF RESET YEAR AND BRANCHES BTN CODE
+
+// ONRELOAD FUNCTION
+
+window.onload = function () {
+  const savedName = localStorage.getItem("username");
+  if (savedName) {
+    // data_store.innerText = `Welcome back, ${savedName}!`;
+
+    main_function(savedName);
+
+    subject_box_cont.innerHTML = "";
+    subject_page.style.display = "block";
+    createBoxes(subject_box_cont, subject_array, savedName);
+    whole_login_page.style.display = "none";
+    main_container.style.display = "block";
+  }
+};
