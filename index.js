@@ -4,6 +4,8 @@ let banner_container = document.getElementById("slides_container");
 //   window.location.href = item.file;
 // });
 
+// ctrl + k = line edit
+// ctrl + l = chat
 var counter = 0;
 
 function scroll_forward() {
@@ -213,6 +215,14 @@ let classwork_container = document.getElementById("classwork-cont");
 let videos_cont = document.getElementById("videos-container");
 let diploma_gallery_cont = document.getElementById("diploma-gallery");
 let degree_gallery_cont = document.getElementById("degree-gallery");
+let degree_timetable = document.getElementById("degree-timetable");
+let diploma_timetable = document.getElementById("diploma-timetable");
+let degree_form_cont = document.getElementById("degree-form");
+let diploma_form_cont = document.getElementById("diploma-form");
+let degree_event_cont = document.getElementById("degree-event-section");
+let diploma_event_cont = document.getElementById("diploma-event-section");
+let notice_diploma_cont = document.getElementById("diploma-notice-section");
+let notice_degree_cont = document.getElementById("degree-notice-section");
 
 // INPUT AND SEARCH FIELD AND BUTTONS
 
@@ -981,6 +991,15 @@ let important_note = [
     soln_pdf: "some.pdf",
   },
   {
+    name: "Physics",
+    title: "Matrices",
+    chap: "7",
+    status: "test paper",
+    code: "P2CO",
+    question_pdf: "COA.pdf",
+    soln_pdf: "some.pdf",
+  },
+  {
     name: "Maths",
     title: "Maths (matrices)",
     chap: "7",
@@ -1384,6 +1403,207 @@ let video_array = [
     img: "test.5545d",
   },
 ];
+
+// TIMETABLE ARRAY
+
+let timetable_array = [
+  {
+    img: "timetable.jpeg",
+    type: "D",
+    year: "1",
+    acadmic: "2024-25",
+    class: "AO",
+    pdf: "timetable.pdf",
+  },
+  {
+    img: "timetable.jpeg",
+    type: "D",
+    year: "1",
+    acadmic: "2024-25",
+    class: "AO",
+    pdf: "timetable.pdf",
+  },
+  {
+    img: "timetable.jpeg",
+    type: "D",
+    year: "1",
+    acadmic: "2024-25",
+    class: "AO",
+    pdf: "timetable.pdf",
+  },
+  {
+    img: "timetable.jpeg",
+    type: "D",
+    year: "1",
+    acadmic: "2024-25",
+    class: "AO",
+    pdf: "timetable.pdf",
+  },
+  {
+    img: "timetable.jpeg",
+    type: "P",
+    year: "1",
+    acadmic: "2024-25",
+    class: "po",
+    pdf: "timetable.pdf",
+  },
+  {
+    img: "timetable.jpeg",
+    type: "P",
+    year: "1",
+    acadmic: "2024-25",
+    class: "PO",
+    pdf: "timetable.pdf",
+  },
+];
+
+// FORMS ARRAY
+
+let forms_array = [
+  {
+    img: "form.jpeg",
+    type: "D",
+    year: "1",
+    submit_date: "11/11/2000",
+    class: "AO,Co, Ce",
+    pdf: "form.pdf",
+  },
+  {
+    img: "form.jpeg",
+    type: "D",
+    year: "1",
+    submit_date: "11/11/2000",
+    class: "AO,Co, Ce",
+    pdf: "form.pdf",
+  },
+  {
+    img: "form.jpeg",
+    type: "D",
+    year: "1",
+    submit_date: "11/11/2000",
+    class: "AO,Co, Ce",
+    pdf: "form.pdf",
+  },
+  {
+    img: "form.jpeg",
+    type: "P",
+    year: "1",
+    submit_date: "11/11/2000",
+    class: "AO,Co, Ce",
+    pdf: "form.pdf",
+  },
+];
+
+// EVENTS ARRAY
+
+let events_array = [
+  {
+    img: "eventpost.jpg",
+    title: "Grand Ceremony of Chief guest",
+    venue: "Degree hall",
+    date: "15/10/24",
+    class: "Mechanical",
+    type: "D",
+    year: "1st year",
+    pdf: "event.pdff",
+    starts_on: "10/10/24",
+    ends_on: "15/10/24",
+  },
+  {
+    img: "eventpost.jpg",
+    title: "Grand Ceremony of Chief guest",
+    venue: "Degree hall",
+    date: "15/10/24",
+    class: "Mechanical",
+    type: "D",
+    year: "1st year",
+    pdf: "event.pdff",
+    starts_on: "10/10/24",
+    ends_on: "15/10/24",
+  },
+  {
+    img: "eventpost.jpg",
+    title: "Grand Ceremony of Chief guest",
+    venue: "Degree hall",
+    date: "15/10/24",
+    class: "Mechanical",
+    type: "D",
+    year: "1st year",
+    pdf: "event.pdff",
+    starts_on: "10/10/24",
+    ends_on: "15/10/24",
+  },
+  {
+    img: "eventpost.jpg",
+    title: "Grand Ceremony of Chief guest",
+    venue: "Degree hall",
+    date: "15/10/24",
+    class: "Mechanical",
+    type: "P",
+    year: "1st year",
+    pdf: "event.pdff",
+    starts_on: "10/10/24",
+    ends_on: "15/10/24",
+  },
+  {
+    img: "eventpost.jpg",
+    title: "Grand Ceremony of Chief guest",
+    venue: "Degree hall",
+    date: "15/10/24",
+    class: "Mechanical",
+    type: "P",
+    year: "1st year",
+    pdf: "event.pdff",
+    starts_on: "10/10/24",
+    ends_on: "15/10/24",
+  },
+];
+
+// NOTICE ARRAY
+
+let notice_array = [
+  {
+    class: "ME-A",
+    type: "D",
+    date: "11/11/2000",
+    pdf: "notice.pdf",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex aperiam voluptatum nobis! Aspernatur consectetur tempore ut inventore error dolore laboriosam eaque nihil, necessitatibus illum deserunt quam nam, esse quidem?",
+  },
+  {
+    class: "ME-A",
+    date: "11/11/2000",
+    type: "D",
+    pdf: "notice.pdf",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex aperiam voluptatum nobis! Aspernatur consectetur tempore ut inventore error dolore laboriosam eaque nihil, necessitatibus illum deserunt quam nam, esse quidem?",
+  },
+  {
+    class: "ME-A",
+    date: "11/11/2000",
+    type: "D",
+    pdf: "notice.pdf",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex aperiam voluptatum nobis! Aspernatur consectetur tempore ut inventore error dolore laboriosam eaque nihil, necessitatibus illum deserunt quam nam, esse quidem?",
+  },
+  {
+    class: "ME-A",
+    date: "11/11/2000",
+    type: "P",
+    pdf: "notice.pdf",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex aperiam voluptatum nobis! Aspernatur consectetur tempore ut inventore error dolore laboriosam eaque nihil, necessitatibus illum deserunt quam nam, esse quidem?",
+  },
+  {
+    class: "CI-A",
+    date: "11/11/2000",
+    pdf: "notice.pdf",
+    type: "P",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex aperiam voluptatum nobis! Aspernatur consectetur tempore ut inventore error dolore laboriosam eaque nihil, necessitatibus illum deserunt quam nam, esse quidem?",
+  },
+];
+
 // BACKGROUND IMAGES FOR SUBJECT BOXES
 
 const bg_sub_box = [
@@ -2215,6 +2435,196 @@ function main_function(final_code) {
     degree_gallery_cont.append(main_box);
   });
 
+  // TIMETABLE PAGE CODE
+
+  degree_timetable.innerHTML = "";
+  diploma_timetable.innerHTML = "";
+  timetable_array.forEach((element) => {
+    let box = document.createElement("div");
+    box.setAttribute("class", "timetable-block");
+    let img_box = document.createElement("img");
+    img_box.src = `timetable/${element.img}`;
+    let box_info = document.createElement("div");
+    box_info.setAttribute("id", "timetable-info");
+    let type_box = document.createElement("p");
+    // type_box.innerHTML = `&#8226; ${element.type}`;
+    let year_box = document.createElement("p");
+    year_box.innerHTML = `&#8226; Year - ${element.year}`;
+    let class_box = document.createElement("p");
+    class_box.innerHTML = `&#8226;  ${element.class}`;
+    let acadmic_box = document.createElement("p");
+    acadmic_box.innerHTML = `&#8226; Acadmic - ${element.acadmic}`;
+    let open_box = document.createElement("a");
+    open_box.href = `timetable/${element.pdf}`;
+    open_box.textContent = "OPEN";
+
+    box_info.append(type_box, year_box, class_box, acadmic_box, open_box);
+    box.append(img_box, box_info);
+
+    if (element.type == "D") {
+      type_box.innerHTML = `&#8226; Degree`;
+      degree_timetable.append(box);
+    } else {
+      type_box.innerHTML = `&#8226; Diploma`;
+      diploma_timetable.append(box);
+    }
+  });
+
+  // FORMS PAGE CODE
+
+  degree_form_cont.innerHTML = "";
+  diploma_form_cont.innerHTML = "";
+
+  forms_array.forEach((element) => {
+    let box = document.createElement("div");
+    box.setAttribute("class", "form-block");
+    let img_box = document.createElement("img");
+    img_box.src = `form/${element.img}`;
+    img_box.alt = "loading";
+    let box_info = document.createElement("div");
+    box_info.setAttribute("id", "form-info");
+    let type_box = document.createElement("p");
+    type_box.innerHTML = element.type == "D" ? "Degree" : "Diploma";
+    let year_box = document.createElement("p");
+    year_box.innerHTML = `Year - ${element.year}`;
+    let class_box = document.createElement("p");
+    class_box.innerHTML = element.class;
+    let submit_box = document.createElement("i");
+    submit_box.innerHTML = `Submit - ${element.submit_date}`;
+    let open_box = document.createElement("a");
+    open_box.href = `form/${element.pdf}`;
+    open_box.textContent = "read";
+
+    box_info.append(type_box, year_box, class_box, submit_box, open_box);
+    box.append(img_box, box_info);
+
+    if (element.type == "D") {
+      degree_form_cont.append(box);
+    } else {
+      diploma_form_cont.append(box);
+    }
+  });
+
+  // {
+  //   img: "eventpost.jpg",
+  //   title: "Grand Ceremony of Chief guest",
+  //   venue: "Degree hall",
+  //   date: "15/10/24",
+  //   class: "Mechanical",
+  //   type: "D",
+  //   year: "1st year",
+  //   pdf: "event.pdff",
+  //   starts_on: "10/10/24",
+  //   ends_on: "15/10/24",
+  // },
+
+  // EVENTS PAGE CODE
+
+  degree_event_cont.innerHTML = "";
+  diploma_event_cont.innerHTML = "";
+
+  events_array.forEach((event) => {
+    const eventBlock = document.createElement("div");
+    eventBlock.className = "event-block";
+
+    const posterCont = document.createElement("div");
+    posterCont.id = "poster-cont";
+
+    const img = document.createElement("img");
+    img.src = `events/${event.img}`;
+    img.alt = "loading";
+
+    const title = document.createElement("h3");
+    title.textContent = event.title;
+
+    posterCont.appendChild(img);
+    posterCont.appendChild(title);
+
+    const eventInfo = document.createElement("div");
+    eventInfo.id = "event-info";
+
+    const venue = document.createElement("p");
+    venue.style.color = "rgb(0, 0, 0)";
+    venue.textContent = `Venue - ${event.venue}`;
+
+    const classInfo = document.createElement("p");
+    const classIcon = document.createElement("img");
+    classIcon.src = "imgs/student.png";
+    classIcon.alt = "loading";
+    const classSpan = document.createElement("span");
+    classSpan.textContent = `${event.class} • ${event.year}`;
+    classInfo.appendChild(classIcon);
+    classInfo.appendChild(classSpan);
+
+    const dateInfo = document.createElement("p");
+    const calendarIcon = document.createElement("img");
+    calendarIcon.src = "imgs/calendar2.png";
+    calendarIcon.alt = "loading";
+    const dateSpan = document.createElement("span");
+    dateSpan.textContent = `Starts on ${event.starts_on} • Ends on ${event.ends_on}`;
+    dateInfo.appendChild(calendarIcon);
+    dateInfo.appendChild(dateSpan);
+
+    eventInfo.appendChild(venue);
+    eventInfo.appendChild(classInfo);
+    eventInfo.appendChild(dateInfo);
+
+    eventBlock.appendChild(posterCont);
+    eventBlock.appendChild(eventInfo);
+
+    // Add click event listener to open PDF
+    eventBlock.addEventListener("click", () => {
+      window.open(`events/${event.pdf}`, "_blank");
+    });
+
+    if (event.type === "D") {
+      document.getElementById("degree-event-section").appendChild(eventBlock);
+    } else {
+      document.getElementById("diploma-event-section").appendChild(eventBlock);
+    }
+  });
+
+  // NOTICE PAGE CODE
+
+  notice_diploma_cont.innerHTML = "";
+  notice_degree_cont.innerHTML = "";
+
+  notice_array.forEach((notice) => {
+    const noticeBlock = document.createElement("div");
+    noticeBlock.className = "notice-block";
+
+    const title = document.createElement("h3");
+    title.textContent = "Notice";
+
+    const classInfo = document.createElement("h4");
+    classInfo.textContent = `(${notice.class})`;
+
+    const date = document.createElement("h5");
+    date.textContent = `Date : ${notice.date}`;
+
+    const description = document.createElement("p");
+    description.id = "notice-discription";
+    description.textContent = notice.description;
+
+    const pdfLink = document.createElement("a");
+    pdfLink.href = `notice/${notice.pdf}`;
+    pdfLink.textContent = "PDF";
+
+    noticeBlock.appendChild(title);
+    noticeBlock.appendChild(classInfo);
+    noticeBlock.appendChild(date);
+    noticeBlock.appendChild(description);
+    noticeBlock.appendChild(pdfLink);
+
+    if (notice.type === "D") {
+      document.getElementById("degree-notice-section").appendChild(noticeBlock);
+    } else {
+      document
+        .getElementById("diploma-notice-section")
+        .appendChild(noticeBlock);
+    }
+  });
+
   main_menu.style.right = "-290px";
   menu_blankspace.style.display = "none";
 }
@@ -2579,23 +2989,23 @@ function p_ty_func() {
 
 // ONRELOAD FUNCTION
 
-window.onload = function () {
-  const savedName = localStorage.getItem("username");
-  if (savedName) {
-    // data_store.innerText = `Welcome back, ${savedName}!`;
+// window.onload = function () {
+//   const savedName = localStorage.getItem("username");
+//   if (savedName) {
+//     // data_store.innerText = `Welcome back, ${savedName}!`;
 
-    main_function(savedName);
+//     main_function(savedName);
 
-    subject_box_cont.innerHTML = "";
-    subject_page.style.display = "block";
-    createBoxes(subject_box_cont, subject_array, savedName);
-    whole_login_page.style.display = "none";
-    main_container.style.display = "block";
+//     subject_box_cont.innerHTML = "";
+//     subject_page.style.display = "block";
+//     createBoxes(subject_box_cont, subject_array, savedName);
+//     whole_login_page.style.display = "none";
+//     main_container.style.display = "block";
 
-    subject_page_btn.style.color = "#2064b1";
-    subject_page_btn.style.borderBottom = "2px solid #2064b1";
-  }
-};
+//     subject_page_btn.style.color = "#2064b1";
+//     subject_page_btn.style.borderBottom = "2px solid #2064b1";
+//   }
+// };
 
 // Keyboard shortcut for prompt edit
 // document.addEventListener('keydown', function(e) {

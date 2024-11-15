@@ -69,7 +69,7 @@
 
     <!-- ------------------------------------------------------ MAIN CONTAINER ----------------------------------------------------- -->
 
-    <div id="main-container" >
+    <div id="main-container" style="display: none;">
         <div id="question-solution-box">
             <i class="fa-solid fa-x" id="ques_soln_cut_btn"></i>
             <a id="question-button" target="_blank" href="/">Questions</a>
@@ -79,7 +79,7 @@
 
         <div class="blankspace" id="menu-blankspace" ></div>
         <div class="blankspace" id="questionbox-blankspace"></div>
-        <div id="menu-container">
+        <div id="menu-container" >
             <nav id="navbar">
                 <div id="logo-main-cont">
                     <div id="logo-cont"><img src="imgs/logo2.png" alt="loading" id="logo-img"></div>
@@ -456,7 +456,7 @@
 
                 <div id="classwork-page" >
                     <div id="class-search-cont">
-                        <input type="text" onkeydown="empty_input(event)" id="class-search" placeholder="Search Chapter">
+                        <input type="text" onkeyup="search_class()" onkeydown="empty_input(event)" id="class-search" placeholder="Search Chapter">
                         <img src="imgs/search.png" id="class-seach-btn" alt="loading">
                     </div>
 
@@ -1058,7 +1058,7 @@
 
                 <div id="video-page" >
                     <div id="video-searchbar">
-                        <input onkeydown="empty_input_video(event)" type="text" id="video-search-input"  placeholder="Search subject...">
+                        <input onkeyup="search_class_video()" onkeydown="empty_input_video(event)" type="text" id="video-search-input"  placeholder="Search subject...">
                         <img  id="video-search-btn" src="imgs/search.png" alt="loading">
                     </div>
 
