@@ -605,21 +605,13 @@ let subject_array = [
   {
     name: "Marathi",
     thumnail_img: "math.png",
-    code: "P1",
+    code: "P2CO",
     syllabus: [
       { title: "Maths (basic)", s_pdf: "asf.pdf" },
       { title: "Maths (applied)", s_pdf: "asf.pdf" },
     ],
   },
-  {
-    name: "Science",
-    thumnail_img: "cplus.png",
-    code: "P1",
-    syllabus: [
-      { title: "Maths (basic)", s_pdf: "asf.pdf" },
-      { title: "Maths (applied)", s_pdf: "asf.pdf" },
-    ],
-  },
+
   {
     name: "english",
     thumnail_img: "math.png",
@@ -634,8 +626,37 @@ let subject_array = [
     thumnail_img: "python.png",
     code: "P1",
     syllabus: [
-      { title: "Maths (basic)", s_pdf: "asf.pdf" },
+      { title: "Maths (basic)", s_pdf: "1.pdf" },
       { title: "Maths (applied)", s_pdf: "asf.pdf" },
+    ],
+  },
+
+  {
+    name: "Science",
+    thumnail_img: "cplus.png",
+    code: "P2CO",
+    syllabus: [
+      { title: "Maths (basic)", s_pdf: "2.pdf" },
+      { title: "Maths (applied)", s_pdf: "3.pdf" },
+    ],
+  },
+
+  {
+    name: "Chemistry",
+    thumnail_img: "chem.png",
+    code: "P1",
+    syllabus: [
+      { title: "Maths (basic)", s_pdf: "3.pdf" },
+      { title: "Maths (applied)", s_pdf: "4.pdf" },
+    ],
+  },
+  {
+    name: "Maths",
+    thumnail_img: "math.png",
+    code: "P1",
+    syllabus: [
+      { title: "Maths (basic)", s_pdf: "1.pdf" },
+      { title: "Maths (applied)", s_pdf: "2.pdf" },
     ],
   },
 
@@ -838,66 +859,48 @@ let subject_array = [
       { title: "Maths (applied)", s_pdf: "asf.pdf" },
     ],
   },
-  {
-    name: "Maths",
-    thumnail_img: "python.png",
-    code: "D4CE",
-    syllabus: [
-      { title: "Maths (basic)", s_pdf: "asf.pdf" },
-      { title: "Maths (applied)", s_pdf: "asf.pdf" },
-    ],
-  },
-  {
-    name: "Maths",
-    thumnail_img: "python.png",
-    code: "P3CO",
-    syllabus: [
-      { title: "Maths (basic)", s_pdf: "asf.pdf" },
-      { title: "Maths (applied)", s_pdf: "asf.pdf" },
-    ],
-  },
 ];
 
 // SYLLABUS ARRAY
 
-let syllabus_array = [
-  {
-    name: "Maths",
-    title: "maths(basics)",
-    code: "D2CO",
-    syllabus_pdf: "asfj.pdf",
-  },
-  {
-    name: "Maths",
-    title: "Maths(applied)",
-    code: "D2CO",
-    syllabus_pdf: "asfj.pdf",
-  },
-  {
-    name: "english",
-    title: "Maths(applied)",
-    code: "D2CO",
-    syllabus_pdf: "asfj.pdf",
-  },
-  {
-    name: "Maths",
-    title: "Maths(applied)",
-    code: "D2CO",
-    syllabus_pdf: "asfj.pdf",
-  },
-  {
-    name: "Maths",
-    title: "Maths(applied)",
-    code: "D2CO",
-    syllabus_pdf: "asfj.pdf",
-  },
-  {
-    name: "Maths",
-    title: "Maths(applied)",
-    code: "D2CO",
-    syllabus_pdf: "asfj.pdf",
-  },
-];
+// let syllabus_array = [
+//   {
+//     name: "Maths",
+//     title: "maths(basics)",
+//     code: "P1",
+//     syllabus_pdf: "1.pdf",
+//   },
+//   {
+//     name: "Maths",
+//     title: "Maths(applied)",
+//     code: "D2CO",
+//     syllabus_pdf: "asfj.pdf",
+//   },
+//   {
+//     name: "english",
+//     title: "Maths(applied)",
+//     code: "D2CO",
+//     syllabus_pdf: "asfj.pdf",
+//   },
+//   {
+//     name: "Maths",
+//     title: "Maths(applied)",
+//     code: "D2CO",
+//     syllabus_pdf: "asfj.pdf",
+//   },
+//   {
+//     name: "Maths",
+//     title: "Maths(applied)",
+//     code: "D2CO",
+//     syllabus_pdf: "asfj.pdf",
+//   },
+//   {
+//     name: "Maths",
+//     title: "Maths(applied)",
+//     code: "D2CO",
+//     syllabus_pdf: "asfj.pdf",
+//   },
+// ];
 
 // PRACTICE ARRAY
 
@@ -907,46 +910,46 @@ let practice_question = [
     title: "Matrices",
     chap: "7",
     status: "test paper",
+    code: "P1",
+    question_pdf: "1.pdf",
+    soln_pdf: "2.pdf",
+  },
+  {
+    name: "Physics",
+    title: "Light",
+    chap: "7",
+    status: "Question paper",
     code: "D2CO",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
+    question_pdf: "3.pdf",
+    soln_pdf: "2.pdf",
   },
   {
     name: "Maths",
-    title: "Matrices",
+    title: "Algebra",
     chap: "7",
-    status: "test paper",
-    code: "D2CO",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
-  },
-  {
-    name: "chemistry",
-    title: "afafaa",
-    chap: "7",
-    status: "test paper",
-    code: "P2CO",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
+    status: "Question paper",
+    code: "P1",
+    question_pdf: "3.pdf",
+    soln_pdf: "2.pdf",
   },
 
   {
     name: "physics",
-    title: "Matrices",
+    title: "Electricy",
     chap: "5",
     status: "test paper",
-    code: "P2CO",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
+    code: "P1",
+    question_pdf: "2.pdf",
+    soln_pdf: "1.pdf",
   },
   {
     name: "Maths",
-    title: "dfddssd",
+    title: "Trignometry",
     chap: "7",
     status: "test paper",
-    code: "D1CO",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
+    code: "P1",
+    question_pdf: "1.pdf",
+    soln_pdf: "3.pdf",
   },
 
   {
@@ -968,11 +971,11 @@ let practice_question = [
     soln_pdf: "some.pdf",
   },
   {
-    name: "Maths",
+    name: "physics",
     title: "asfas",
     chap: "7",
     status: "test paper",
-    code: "D1",
+    code: "P2CO",
     question_pdf: "some.pdf",
     soln_pdf: "some.pdf",
   },
@@ -991,7 +994,7 @@ let important_note = [
     soln_pdf: "some.pdf",
   },
   {
-    name: "Physics",
+    name: "physics",
     title: "Matrices",
     chap: "7",
     status: "test paper",
@@ -1001,6 +1004,24 @@ let important_note = [
   },
   {
     name: "Maths",
+    title: "Tringnometry",
+    chap: "7",
+    status: "Question paper",
+    code: "D1CO",
+    question_pdf: "1.pdf",
+    soln_pdf: "2s.pdf",
+  },
+  {
+    name: "Maths",
+    title: "partials",
+    chap: "7",
+    status: "test paper",
+    code: "P1",
+    question_pdf: "2.pdf",
+    soln_pdf: "3.pdf",
+  },
+  {
+    name: "Maths",
     title: "Maths (matrices)",
     chap: "7",
     status: "test paper",
@@ -1010,21 +1031,12 @@ let important_note = [
   },
   {
     name: "Maths",
-    title: "Maths (matrices)",
+    title: "Log.",
     chap: "7",
-    status: "test paper",
-    code: "D4CE",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
-  },
-  {
-    name: "Maths",
-    title: "Maths (matrices)",
-    chap: "7",
-    status: "test paper",
-    code: "D1CO",
-    question_pdf: "some.pdf",
-    soln_pdf: "some.pdf",
+    status: "Question paper",
+    code: "P1",
+    question_pdf: "2.pdf",
+    soln_pdf: "3.pdf",
   },
   {
     name: "Maths",
@@ -1698,7 +1710,9 @@ function createBoxes(containerId, data, targetCode) {
           // function appendPracBlock(containerId, title, chapter, description) {
 
           if (pq.code == targetCode) {
-            if (pq.name == item.name) {
+            let array_name = pq.name.toUpperCase();
+            let item_name = item.name.toUpperCase();
+            if (array_name == item_name) {
               const pracBlock = document.createElement("a");
               pracBlock.href = "#";
               pracBlock.className = "prac-block";
@@ -1741,9 +1755,10 @@ function createBoxes(containerId, data, targetCode) {
 
         important_note.forEach((pq) => {
           // function appendPracBlock(containerId, title, chapter, description) {
-
+          let array_name = pq.name.toUpperCase();
+          let item_name = item.name.toUpperCase();
           if (pq.code == targetCode) {
-            if (pq.name == item.name) {
+            if (array_name == item_name) {
               const pracBlock = document.createElement("a");
               pracBlock.href = "#";
               pracBlock.className = "prac-block";
