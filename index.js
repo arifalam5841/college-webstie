@@ -3004,23 +3004,23 @@ function p_ty_func() {
 
 // ONRELOAD FUNCTION
 
-// window.onload = function () {
-//   const savedName = localStorage.getItem("username");
-//   if (savedName) {
-//     // data_store.innerText = `Welcome back, ${savedName}!`;
+window.onload = function () {
+  const savedName = localStorage.getItem("username");
+  if (savedName) {
+    // data_store.innerText = `Welcome back, ${savedName}!`;
 
-//     main_function(savedName);
+    main_function(savedName);
 
-//     subject_box_cont.innerHTML = "";
-//     subject_page.style.display = "block";
-//     createBoxes(subject_box_cont, subject_array, savedName);
-//     whole_login_page.style.display = "none";
-//     main_container.style.display = "block";
+    subject_box_cont.innerHTML = "";
+    subject_page.style.display = "block";
+    createBoxes(subject_box_cont, subject_array, savedName);
+    whole_login_page.style.display = "none";
+    main_container.style.display = "block";
 
-//     subject_page_btn.style.color = "#2064b1";
-//     subject_page_btn.style.borderBottom = "2px solid #2064b1";
-//   }
-// };
+    subject_page_btn.style.color = "#2064b1";
+    subject_page_btn.style.borderBottom = "2px solid #2064b1";
+  }
+};
 
 // Keyboard shortcut for prompt edit
 // document.addEventListener('keydown', function(e) {
